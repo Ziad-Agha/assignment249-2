@@ -6,7 +6,7 @@ public class Employee {
 	private double hrWorked;
 	private double hrlyWage;
 	private double annGrsSalary;
-	private double deductions;
+	private double deductions = 0;
 	private double annNetSalary;
 	public Employee(long empNum, String firstName, String lastName, double hrWorked, double hrlyWage,
 			double annGrsSalary) {
@@ -57,7 +57,7 @@ public class Employee {
 		this.annNetSalary = annNetSalary;
 	}
 	public void setDeductions(double deductions) {
-		this.deductions = deductions;
+		this.deductions += deductions;
 	}
 	
 	

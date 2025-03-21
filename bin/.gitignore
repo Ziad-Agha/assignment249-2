@@ -2,3 +2,7 @@
 /MinimumWageException.class
 /Deductions.class
 /ProvincialIncomeTax.class
+/FederalIncomeTax.class
+/EIPremiumTax.class
+/QPIPPremium.class
+/QPPPremium.class

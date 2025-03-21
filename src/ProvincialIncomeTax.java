@@ -1,13 +1,31 @@
-
 public class ProvincialIncomeTax extends Deductions{
 	
-	public static double calculateTax(FileManager employees) {
-		double deductions = 0;
+	@Override
+	public void calculateTax(FileManager FM) {
+		Employee[] employeeList = FM.getEmployees();
 		
-		for(int i = 0; i < employees.getEmployees().length; i++) {
-			if(employees.getEmployees()[i].getAnnGrsSalary() < 18571) {
-				
+		double[] deductions = new double[employeeList.length];
+		
+		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i].getAnnGrsSalary() > 129590) {
+				deductions[i] = employeeList[i].getAnnGrsSalary()*0.2575;
 			}
+			else if(employeeList[i].getAnnGrsSalary() > 106495) {
+				deductions[i] = employeeList[i].getAnnGrsSalary()*0.24;
+			}
+			else if(employeeList[i].getAnnGrsSalary() > 53255) {
+				deductions[i] = employeeList[i].getAnnGrsSalary()*0.19;
+			}
+			else if(employeeList[i].getAnnGrsSalary() > 18571) {
+				deductions[i] = employeeList[i].getAnnGrsSalary()*0.14;
+			}
+			else {
+				deductions[i] = 0;
+			}
+			employeeList[i].setDeductions(deductions[i]);
 		}
+		
 	}
+
+	
 }

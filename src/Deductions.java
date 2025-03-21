@@ -1,4 +1,4 @@
 
 abstract public class Deductions {
-	abstract public double calculateTax();
+	abstract public void calculateTax(FileManager FM);
 }
