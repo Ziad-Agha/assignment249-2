@@ -68,6 +68,10 @@ public class FileManager {
 	
 	
 	}
+	
+	public Employee[] getEmployees() {
+		return this.employees;
+	}
 }
 	
 	
