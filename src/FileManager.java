@@ -43,19 +43,20 @@ public class FileManager {
 	            	 double hrlyWage = scanner.nextDouble();
 	            	 double annGrsSalary = hrlyWage*hrWorked;
 	            	 employees[i] = new Employee(empNum,firstName, lastName, hrWorked, hrlyWage,annGrsSalary);
-	            	 scanner.nextLine();
 	            	 if (hrlyWage < 15.75) {
 	                        throw new MinimumWageException("Error: Employee " + firstName + " " + lastName +
 	                                " has an hourly wage below the minimum wage ($15.75)");
 	            		
 	            	}
+	            	 if(scanner.hasNextLine()) {
+	            		 scanner.nextLine();
+	            	 }
 				}catch(MinimumWageException e){
 					employees[i]=null;
-					continue;
 				}
 	            catch(InputMismatchException e) {
 	            		employees[i]=null;
-	            		continue;
+	            	
 	            	}
 	            }      
 	            
