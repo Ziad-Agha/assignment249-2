@@ -59,6 +59,13 @@ public class Employee {
 	public void setDeductions(double deductions) {
 		this.deductions += deductions;
 	}
+	public double getDeductions() {
+		return deductions;
+	}
+	public double getAnnNetSalary() {
+		return annNetSalary;
+	}
+	
 	
 	
 	

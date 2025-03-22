@@ -7,6 +7,7 @@ public class ProvincialIncomeTax extends Deductions{
 		double[] deductions = new double[employeeList.length];
 		
 		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i]!=null) {
 			if(employeeList[i].getAnnGrsSalary() > 129590) {
 				deductions[i] = employeeList[i].getAnnGrsSalary()*0.2575;
 			}
@@ -22,7 +23,8 @@ public class ProvincialIncomeTax extends Deductions{
 			else {
 				deductions[i] = 0;
 			}
-			employeeList[i].setDeductions(deductions[i]);
+			employeeList[i].setDeductions(employeeList[i].getDeductions() + deductions[i]);
+			employeeList[i].setAnnNetSalary(employeeList[i].getAnnGrsSalary() - employeeList[i].getDeductions());		}
 		}
 		
 	}

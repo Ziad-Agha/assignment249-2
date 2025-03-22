@@ -8,6 +8,7 @@ public class QPPPremium extends Deductions{
 		double qpp;
 		
 		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i]!=null) {
 			qpp = employeeList[i].getAnnGrsSalary()*0.108;
 			if(qpp>7700.40) {
 				deductions[i] = 7700.40;
@@ -15,7 +16,9 @@ public class QPPPremium extends Deductions{
 			else {
 				deductions[i] = qpp;
 			}
-			employeeList[i].setDeductions(deductions[i]);
+			employeeList[i].setDeductions(employeeList[i].getDeductions() + deductions[i]);
+			employeeList[i].setAnnNetSalary(employeeList[i].getAnnGrsSalary() - employeeList[i].getDeductions());
+		}
 		}
 	}
 	

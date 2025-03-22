@@ -8,6 +8,7 @@ public class EIPremiumTax extends Deductions{
 		double ei;
 		int paliers = 0;
 		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i]!=null) {
 			paliers = (int)employeeList[i].getAnnGrsSalary()/100;
 			ei = paliers*1.64;
 			if(ei>1077.48) {
@@ -16,8 +17,10 @@ public class EIPremiumTax extends Deductions{
 			else {
 				deductions[i] = ei;
 			}
-			employeeList[i].setDeductions(deductions[i]);
+			employeeList[i].setDeductions(employeeList[i].getDeductions() + deductions[i]);
+			employeeList[i].setAnnNetSalary(employeeList[i].getAnnGrsSalary() - employeeList[i].getDeductions());
 			
+		}
 		}
 	}
 	

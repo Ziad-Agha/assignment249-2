@@ -8,6 +8,7 @@ public class QPIPPremium extends Deductions {
 		double qpip;
 
 		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i]!=null) {
 			qpip = 0.00494*employeeList[i].getAnnGrsSalary();
 			if(qpip>484.12) {
 				deductions[i] = 484.12;
@@ -15,7 +16,9 @@ public class QPIPPremium extends Deductions {
 			else {
 				deductions[i] = qpip;
 			}
-			employeeList[i].setDeductions(deductions[i]);
+			employeeList[i].setDeductions(employeeList[i].getDeductions() + deductions[i]);
+			employeeList[i].setAnnNetSalary(employeeList[i].getAnnGrsSalary() - employeeList[i].getDeductions());
+		}
 		}
 		
 	}
