@@ -1,3 +1,7 @@
+//
+// Assignment 2
+// Written by: Ziad Agha - 40312869 / Abderrahmane Bensassi-Nour - 40317017
+//
 import java.io.FileNotFoundException;
 import java.io.IOException;
 

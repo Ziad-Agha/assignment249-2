@@ -1,4 +1,7 @@
-
+//
+// Assignment 2
+// Written by: Ziad Agha - 40312869 / Abderrahmane Bensassi-Nour - 40317017
+//
 public class Employee {
 	private long empNum;
 	private String firstName;
@@ -57,7 +60,7 @@ public class Employee {
 		this.annNetSalary = annNetSalary;
 	}
 	public void setDeductions(double deductions) {
-		this.deductions += deductions;
+		this.deductions = deductions;
 	}
 	public double getDeductions() {
 		return deductions;
